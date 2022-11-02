@@ -1,0 +1,71 @@
+.container-fluid{
+    margin: 0px;
+    padding: 0px;
+}
+.back {
+    background-color: beige;
+}
+
+/* for nav bar */
+.corner-image {
+    height: 7vh;
+    width: 5vw;
+}
+
+.navbar {
+    border: 2px solid black;
+    background-color: beige;
+}
+
+.navtext {
+    color: grey;
+}
+
+.active {
+    color: black
+}
+
+/*incomplete todo - center nav items*/
+.navbar-nav{
+    align-self: center;
+}
+
+/* for home page card */
+.card-img-top {
+    width: 60vw;
+    align-self: center;
+}
+
+.card {
+    background-color: beige;
+}
+
+.card-body{
+    align-self: center;
+}
+h6.card-text{
+    text-align:center;
+}
+
+/* about me page style */
+#abtmejumbo{
+    background-color: beige;
+}
+.carousel img{
+    height: 100vh;
+    
+}
+
+/* experience page style */
+#expcont{
+    background-image: url(https://skimap.org/data/538/4768/1644703171jpg_render.jpg);
+    background-size: cover;
+}
+#expjumb{
+ background-color: grey;
+ border: 2px solid black;
+ padding-top: 30vh;
+ padding-left: 20vh;
+ opacity: 0.1;
+ 
+}
