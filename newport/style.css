@@ -1,7 +1,8 @@
-.container-fluid{
+.container-fluid {
     margin: 0px;
     padding: 0px;
 }
+
 .back {
     background-color: beige;
 }
@@ -26,7 +27,7 @@
 }
 
 /*incomplete todo - center nav items*/
-.navbar-nav{
+.navbar-nav {
     align-self: center;
 }
 
@@ -40,32 +41,51 @@
     background-color: beige;
 }
 
-.card-body{
+.card-body {
     align-self: center;
 }
-h6.card-text{
-    text-align:center;
+
+h6.card-text {
+    text-align: center;
 }
 
 /* about me page style */
-#abtmejumbo{
+#abtmejumbo {
     background-color: beige;
 }
-.carousel img{
+
+.carousel img {
     height: 100vh;
-    
+
 }
 
 /* experience page style */
-#expcont{
+#expcont {
     background-image: url(https://skimap.org/data/538/4768/1644703171jpg_render.jpg);
     background-size: cover;
 }
-#expjumb{
- background-color: grey;
- border: 2px solid black;
- padding-top: 30vh;
- padding-left: 20vh;
- opacity: 0.1;
- 
+
+#expjum {
+    background-color: rgba(154, 154, 154, 0.7);
+    margin-top: 20vh;
+    margin-left: 35vh;
+    margin-bottom: 35vh;
+}
+
+#expjum * {
+    color: black;
+    opacity: 1;
+}
+
+.dek img{
+width: 21vw;
+height: 20vw;
+}
+
+.btn-link{
+    border:1px solid black;
+    
+}
+#btntxt{
+    color:white;
 }
