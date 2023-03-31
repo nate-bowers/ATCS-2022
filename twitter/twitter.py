@@ -74,13 +74,14 @@ class Twitter:
             else:
                 #continue because account exists
                 self.currentuser = db_session.query(User).where(User.username == user and User.password == pw).first()
+                
                 return
 
 
     
     def logout(self):
-        self.currentuser = None
         print("You have been logged out " + self.currentuser)
+        self.currentuser = None
         return
 
     """
@@ -147,9 +148,13 @@ class Twitter:
     people the user follows
     """
     def view_feed(self):
+        print(self.currentuser)
         following_list = []
-        for i in self.currentuser.following:
-            following_list.append(i.username)
+        for user in self.currentuser.following:
+            following_list.append(user.username)
+
+
+        #following_list = db_session.query(Tweet).where(Tweet.username in  ):
         feed = db_session.query(Tweet).where(Tweet.username in following_list).limit(5)
         self.print_tweets(feed)
 
@@ -163,8 +168,8 @@ class Twitter:
 
 
     def search_by_tag(self):
-        input = input("What tag would you like to search for?\n")
-        search_tag = input[1:]
+        temp_tag = input("What tag would you like to search for?\n")
+        search_tag = temp_tag[1:]
         if db_session.query(Tag).where(Tag.content == search_tag).count() == 0:
             print("There are no tweets with this tag")
         else:
@@ -209,3 +214,19 @@ class Twitter:
                 self.logout()
         
         self.end()
+
+
+#Working: 
+#  tweet
+
+#Not working:
+#print feed
+#print my tweets
+#search by tag
+#search by user
+#follow
+#unfollow
+#logout
+#print tags
+
+#I can't access current user from functions??
