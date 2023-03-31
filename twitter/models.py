@@ -30,7 +30,6 @@ class User(Base):
     def __repr__(self): 
         return "@"+self.username
 
-
 class Follower(Base):
     __tablename__ = "followers"
 
@@ -48,13 +47,12 @@ class Tweet(Base):
     content = Column("content", TEXT, nullable=False)
     timestamp = Column("timestamp", TEXT, nullable=False)
     username = Column('username', TEXT, ForeignKey('users.username'))
-    tags = relationship("Tag", secondary = "tweettags", back_populates="tweets")
-    
+    tags = relationship("Tag", secondary = "tweettags", back_populates="tweets")    
 
     def __repr__(self): 
         ret = self.username + "\n" + self.content + "\n"
         for i in self.tags:
-            ret += i.content + " "
+            ret += "#" + i.content + " "
         ret += "\n" + self.timestamp
         return ret
 
@@ -68,8 +66,7 @@ class Tag(Base):
     tweets = relationship("Tweet", secondary = "tweettags", back_populates="tags")
 
     def __repr__(self): 
-        return "#" + self.content
-    
+        return "#" + self.content   
 
 class TweetTag(Base):
     # TODO: Complete the class
